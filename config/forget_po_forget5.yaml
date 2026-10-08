@@ -5,6 +5,7 @@ defaults:
   - _self_
 
 model_family: llava-phi
+attn_implementation: sdpa
 # Override with the author's downloaded Stage I checkpoint path containing llava.
 model_path: ./models/final_ft_10_epochs_lr2e-05_llava-phi_full
 data_path: ./dataset/full.json
@@ -22,4 +23,4 @@ LoRA:
 save_dir: /kaggle/working/models/llava_phi_PO_forget5
 report_to: null
 # Unspecified parameters retain repository defaults.
-# Original forget.py requires FlashAttention-2; this config does not enable T4 support.
+# T4 precision and memory settings must be configured separately in Accelerate.
